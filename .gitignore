@@ -431,3 +431,9 @@ temp/
 
 #Exe Files
 *.exe
+
+#Source Files
+Source/
+
+#Build Folder
+Week-*/build
