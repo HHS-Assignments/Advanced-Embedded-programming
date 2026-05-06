@@ -9,18 +9,28 @@ CONFIG += c++11
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    deur.cpp \
+    draaideur.cpp \
     hallsensor.cpp \
     main.cpp \
     mainwindow.cpp \
+    schuifdeur.cpp \
     sensor.cpp
 
 HEADERS += \
+    deur.h \
+    deurdefs.h \
+    draaideur.h \
     hallsensor.h \
     mainwindow.h \
+    schuifdeur.h \
     sensor.h
 
 FORMS += \
     mainwindow.ui
+
+RESOURCES += \
+    resources.qrc
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

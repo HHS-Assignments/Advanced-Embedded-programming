@@ -25,9 +25,9 @@ bool Sensor::isGeactiveerd() const
 
 }
 
- pair<int,int> Sensor::coordinaten() const {
+std::pair<int,int> Sensor::coordinaten() const {
 
-     pair<int,int> temp;
+     std::pair<int,int> temp;
      temp.first=x;
      temp.second=y;
      return temp;

@@ -3,8 +3,6 @@
 
 #include <utility>
 
-using namespace std;
-
 
 class QPaintDevice;
 
