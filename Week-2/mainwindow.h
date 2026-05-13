@@ -12,7 +12,9 @@ class QPaintEvent;
 class Deur;
 class Draaideur;
 class HallSensor;
+class CodeSlot;
 class Schuifdeur;
+class SleutelSlot;
 
 class MainWindow : public QMainWindow
 {
@@ -28,14 +30,20 @@ protected:
 private slots:
     void on_schuifdeurSensorKnop_clicked();
     void on_schuifdeurKnop_clicked();
+    void on_schuifdeurOntgrendelKnop_clicked();
     void on_draaideur1Knop_clicked();
+    void on_draaideur1OntgrendelKnop_clicked();
     void on_draaideur2Knop_clicked();
+    void on_draaideur2OntgrendelKnop_clicked();
 
 private:
     void maakDeuren();
 
     Ui::MainWindow *ui;
     std::shared_ptr<HallSensor> sensor;
+    std::shared_ptr<SleutelSlot> voordeurSlot;
+    std::shared_ptr<CodeSlot> kamerdeur1Slot;
+    std::shared_ptr<CodeSlot> kamerdeur2Slot;
     std::vector<std::shared_ptr<Deur>> deuren;
     std::shared_ptr<Schuifdeur> voordeur;
     std::shared_ptr<Draaideur> kamerdeur1;

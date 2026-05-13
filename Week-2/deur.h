@@ -4,6 +4,7 @@
 #include <utility>
 
 class QPaintDevice;
+class Slot;
 
 class Deur
 {
@@ -16,14 +17,18 @@ public:
     bool isOpen() const;
     unsigned int deurLengte() const;
     std::pair<int, int> coordinaten() const;
+    void zetSlot(Slot *slot);
 
 protected:
     void zetOpen(bool open);
+    bool slotOntgrendeld() const;
+    void vergrendelSlot();
 
     int x_coordinat;
     int y_coordinat;
     unsigned int lengte;
     bool open;
+    Slot *slot;
 };
 
 #endif // DEUR_H

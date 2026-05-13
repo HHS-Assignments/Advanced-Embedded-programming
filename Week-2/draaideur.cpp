@@ -12,6 +12,10 @@ Draaideur::Draaideur(int x, int y, unsigned int lengte, bool linksom)
 
 bool Draaideur::openen()
 {
+    if (!slotOntgrendeld()) {
+        return false;
+    }
+
     zetOpen(OPEN);
     return true;
 }
@@ -19,6 +23,7 @@ bool Draaideur::openen()
 bool Draaideur::sluiten()
 {
     zetOpen(DICHT);
+    vergrendelSlot();
     return true;
 }
 

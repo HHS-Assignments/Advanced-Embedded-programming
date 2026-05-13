@@ -1,12 +1,15 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
+#include "codeslot.h"
 #include "deur.h"
 #include "draaideur.h"
 #include "hallsensor.h"
 #include "schuifdeur.h"
+#include "sleutelslot.h"
 
 #include <QPainter>
+#include <QLineEdit>
 #include <QPen>
 #include <QImage>
 
@@ -18,6 +21,9 @@ MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
     , sensor(std::make_shared<HallSensor>())
+    , voordeurSlot(std::make_shared<SleutelSlot>("geel"))
+    , kamerdeur1Slot(std::make_shared<CodeSlot>(1234))
+    , kamerdeur2Slot(std::make_shared<CodeSlot>(2468))
     , voordeur(nullptr)
     , kamerdeur1(nullptr)
     , kamerdeur2(nullptr)
@@ -32,12 +38,15 @@ void MainWindow::maakDeuren()
     deuren.reserve(3);
 
     voordeur = std::make_shared<Schuifdeur>(489, 162, 80, sensor);
+    voordeur->zetSlot(voordeurSlot.get());
     deuren.push_back(voordeur);
 
     kamerdeur1 = std::make_shared<Draaideur>(285, 286, 30, true);
+    kamerdeur1->zetSlot(kamerdeur1Slot.get());
     deuren.push_back(kamerdeur1);
 
     kamerdeur2 = std::make_shared<Draaideur>(234, 89, 40, false);
+    kamerdeur2->zetSlot(kamerdeur2Slot.get());
     deuren.push_back(kamerdeur2);
 
     voordeur->openen();
@@ -94,6 +103,13 @@ void MainWindow::on_schuifdeurKnop_clicked()
     update();
 }
 
+void MainWindow::on_schuifdeurOntgrendelKnop_clicked()
+{
+    voordeurSlot->ontgrendel(ui->schuifdeurSleutelInvoer->text().toStdString());
+    ui->schuifdeurSleutelInvoer->clear();
+    update();
+}
+
 void MainWindow::on_draaideur1Knop_clicked()
 {
     if (kamerdeur1->isOpen()) {
@@ -102,6 +118,13 @@ void MainWindow::on_draaideur1Knop_clicked()
         kamerdeur1->openen();
     }
 
+    update();
+}
+
+void MainWindow::on_draaideur1OntgrendelKnop_clicked()
+{
+    kamerdeur1Slot->ontgrendel(ui->draaideur1CodeInvoer->text().toStdString());
+    ui->draaideur1CodeInvoer->clear();
     update();
 }
 
@@ -114,5 +137,12 @@ void MainWindow::on_draaideur2Knop_clicked()
     }
 
     update();  // belangrijk voor direct hertekenen
+}
+
+void MainWindow::on_draaideur2OntgrendelKnop_clicked()
+{
+    kamerdeur2Slot->ontgrendel(ui->draaideur2CodeInvoer->text().toStdString());
+    ui->draaideur2CodeInvoer->clear();
+    update();
 }
 

@@ -14,6 +14,10 @@ Schuifdeur::Schuifdeur(int x, int y, unsigned int lengte, std::shared_ptr<Sensor
 
 bool Schuifdeur::openen()
 {
+    if (!slotOntgrendeld()) {
+        return false;
+    }
+
     zetOpen(OPEN);
     return true;
 }
@@ -23,7 +27,9 @@ bool Schuifdeur::sluiten()
     if (sensor && sensor->isGeactiveerd()) {
         return false;
     }
+
     zetOpen(DICHT);
+    vergrendelSlot();
     return true;
 }
 

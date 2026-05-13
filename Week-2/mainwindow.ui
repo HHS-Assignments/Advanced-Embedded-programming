@@ -17,7 +17,7 @@
    <widget class="QPushButton" name="schuifdeurKnop">
     <property name="geometry">
      <rect>
-      <x>540</x>
+      <x>520</x>
       <y>220</y>
       <width>75</width>
       <height>28</height>
@@ -25,6 +25,35 @@
     </property>
     <property name="text">
      <string>VD</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="schuifdeurSleutelInvoer">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>300</y>
+      <width>101</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="placeholderText">
+     <string>geel</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="schuifdeurOntgrendelKnop">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>300</y>
+      <width>101</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Ontgrendel</string>
     </property>
    </widget>
    <widget class="QPushButton" name="schuifdeurSensorKnop">
@@ -53,6 +82,35 @@
      <string>D2</string>
     </property>
    </widget>
+   <widget class="QLineEdit" name="draaideur1CodeInvoer">
+    <property name="geometry">
+     <rect>
+      <x>520</x>
+      <y>250</y>
+      <width>70</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="placeholderText">
+     <string>1234</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="draaideur1OntgrendelKnop">
+    <property name="geometry">
+     <rect>
+      <x>600</x>
+      <y>250</y>
+      <width>90</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Ontgrendel</string>
+    </property>
+   </widget>
    <widget class="QPushButton" name="draaideur2Knop">
     <property name="geometry">
      <rect>
@@ -66,6 +124,45 @@
      <string>D3</string>
     </property>
    </widget>
+   <widget class="QLineEdit" name="draaideur2CodeInvoer">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>170</y>
+      <width>70</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="placeholderText">
+     <string>2468</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="draaideur2OntgrendelKnop">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>170</y>
+      <width>90</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Ontgrendel</string>
+    </property>
+   </widget>
+   <zorder>draaideur2OntgrendelKnop</zorder>
+   <zorder>draaideur2CodeInvoer</zorder>
+   <zorder>draaideur1Knop</zorder>
+   <zorder>draaideur1OntgrendelKnop</zorder>
+   <zorder>draaideur2Knop</zorder>
+   <zorder>draaideur1CodeInvoer</zorder>
+   <zorder>schuifdeurOntgrendelKnop</zorder>
+   <zorder>schuifdeurSleutelInvoer</zorder>
+   <zorder>schuifdeurKnop</zorder>
+   <zorder>schuifdeurSensorKnop</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
