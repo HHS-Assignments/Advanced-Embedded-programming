@@ -17,7 +17,9 @@ SOURCES += \
     mainwindow.cpp \
     sleutelslot.cpp \
     schuifdeur.cpp \
-    sensor.cpp
+    sensor.cpp \
+    herkenningsslot.cpp \
+    drukbox.cpp
 
 HEADERS += \
     codeslot.h \
@@ -29,7 +31,10 @@ HEADERS += \
     sleutelslot.h \
     schuifdeur.h \
     slot.h \
-    sensor.h
+    sensor.h \
+    afdrukker.h \
+    drukbox.h \
+    herkenningsslot.h
 
 FORMS += \
     mainwindow.ui

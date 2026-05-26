@@ -51,11 +51,6 @@ bool Deur::slotOntgrendeld() const
     if (m_slots.empty()) {
         return true;
     }
-  return std::all_of(m_slots.begin(), m_slots.end(), [](const std::shared_ptr<Slot> &s){
-        return s && !s->isVergrendeld();
-    });
-}
-
     // Door is unlocked only when ALL m_slots are unlocked
     return std::all_of(m_slots.begin(), m_slots.end(), [](const std::shared_ptr<Slot> &s){
         return s && !s->isVergrendeld();

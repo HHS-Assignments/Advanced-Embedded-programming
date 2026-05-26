@@ -7,11 +7,15 @@
 #include "hallsensor.h"
 #include "schuifdeur.h"
 #include "sleutelslot.h"
+#include "herkenningsslot.h"
+#include "drukbox.h"
 
 #include <QPainter>
 #include <QLineEdit>
 #include <QPen>
 #include <QImage>
+#include <QPushButton>
+#include <QTextBrowser>
 
 namespace {
 constexpr int afbeeldingOffset = 10;
@@ -32,6 +36,8 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
     maakDeuren();
+
+    // Herkennings widgets are created in the .ui file; auto-connected by name
 }
 
 void MainWindow::maakDeuren()
@@ -59,6 +65,15 @@ void MainWindow::maakDeuren()
 
     kamerdeur2 = std::make_shared<Draaideur>(234, 89, 40, false);
     kamerdeur2->zetSlot(kamerdeur2Slot);
+    // create a HerkenningsSlot and add alongside the CodeSlot on kamerdeur2
+    herkenningsSlot = std::make_shared<HerkenningsSlot>();
+    // default autorisaties for deur 2
+    herkenningsSlot->voegAutorisatieToe("Anton", false);
+    herkenningsSlot->voegAutorisatieToe("Stefan", true);
+
+    // add to ownership containers and door
+    alleSloten.push_back(herkenningsSlot);
+    kamerdeur2->voegSlotToe(herkenningsSlot);
     deuren.push_back(kamerdeur2);
 
     voordeur->openen();
@@ -85,7 +100,7 @@ void MainWindow::paintEvent(QPaintEvent *event){
 
     for (const auto &deur : deuren) {
         deur->teken(this);
-    }k
+    }
 }
 
 MainWindow::~MainWindow()
@@ -162,7 +177,17 @@ void MainWindow::on_draaideur2Knop_clicked()
 {
     if (kamerdeur2->isOpen()) {
         kamerdeur2->sluiten();
-    } else {
+        update();
+        return;
+    }
+
+    const std::string naam = ui->herkenningNaamInvoer->text().toStdString();
+    if (naam.empty()) {
+        update();
+        return;
+    }
+
+    if (herkenningsSlot && herkenningsSlot->ontgrendel(naam)) {
         kamerdeur2->openen();
     }
 
@@ -174,5 +199,49 @@ void MainWindow::on_draaideur2OntgrendelKnop_clicked()
     kamerdeur2Slot->ontgrendel(ui->draaideur2CodeInvoer->text().toStdString());
     ui->draaideur2CodeInvoer->clear();
     update();
+}
+
+void MainWindow::on_herkenningVoegPos_clicked()
+{
+    const std::string naam = ui->herkenningNaamInvoer->text().toStdString();
+    if (naam.empty()) return;
+
+    // find a Slot pointer and dynamic_cast to HerkenningsSlot as required
+    for (const auto &s : alleSloten) {
+        if (!s) continue;
+        auto h = std::dynamic_pointer_cast<HerkenningsSlot>(s);
+        if (h) {
+            h->voegAutorisatieToe(naam, true);
+            break;
+        }
+    }
+
+    ui->herkenningNaamInvoer->clear();
+}
+
+void MainWindow::on_herkenningVoegNeg_clicked()
+{
+    const std::string naam = ui->herkenningNaamInvoer->text().toStdString();
+    if (naam.empty()) return;
+
+    for (const auto &s : alleSloten) {
+        if (!s) continue;
+        auto h = std::dynamic_pointer_cast<HerkenningsSlot>(s);
+        if (h) {
+            h->voegAutorisatieToe(naam, false);
+            break;
+        }
+    }
+
+    ui->herkenningNaamInvoer->clear();
+}
+
+void MainWindow::on_herkenningPrint_clicked()
+{
+    if (!herkenningsSlot) return;
+    // associate a Drukbox with the QTextBrowser
+    auto druk = std::make_shared<Drukbox>(ui->herkenningBrowser);
+    herkenningsSlot->setAfdrukker(druk);
+    herkenningsSlot->drukKaartenbak();
 }
 

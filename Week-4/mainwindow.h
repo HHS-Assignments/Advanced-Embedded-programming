@@ -38,6 +38,9 @@ private slots:
     void on_draaideur1Ontgrendel2Knop_clicked();
     void on_draaideur2Knop_clicked();
     void on_draaideur2OntgrendelKnop_clicked();
+    void on_herkenningVoegPos_clicked();
+    void on_herkenningVoegNeg_clicked();
+    void on_herkenningPrint_clicked();
 
 private:
     void maakDeuren();
@@ -54,6 +57,8 @@ private:
     std::shared_ptr<Schuifdeur> voordeur;
     std::shared_ptr<Draaideur> kamerdeur1;
     std::shared_ptr<Draaideur> kamerdeur2;
+    std::shared_ptr<class HerkenningsSlot> herkenningsSlot;
+
 };
 
 #endif // MAINWINDOW_H
