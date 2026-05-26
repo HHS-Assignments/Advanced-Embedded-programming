@@ -65,9 +65,9 @@ void MainWindow::maakDeuren()
 
     kamerdeur2 = std::make_shared<Draaideur>(234, 89, 40, false);
     kamerdeur2->zetSlot(kamerdeur2Slot);
-    // create a HerkenningsSlot and add alongside the CodeSlot on kamerdeur2
+    // create a HerkenningsSlot and add alongside the CodeSlot on deur 3
     herkenningsSlot = std::make_shared<HerkenningsSlot>();
-    // default autorisaties for deur 2
+    // default autorisaties for deur 3
     herkenningsSlot->voegAutorisatieToe("Anton", false);
     herkenningsSlot->voegAutorisatieToe("Stefan", true);
 
@@ -146,7 +146,7 @@ void MainWindow::on_schuifdeurOntgrendel2Knop_clicked()
     }
 }
 
-void MainWindow::on_draaideur1Knop_clicked()
+void MainWindow::on_deur2Knop_clicked()
 {
     if (kamerdeur1->isOpen()) {
         kamerdeur1->sluiten();
@@ -157,23 +157,23 @@ void MainWindow::on_draaideur1Knop_clicked()
     update();
 }
 
-void MainWindow::on_draaideur1OntgrendelKnop_clicked()
+void MainWindow::on_deur2OntgrendelKnop_clicked()
 {
-    kamerdeur1Slot->ontgrendel(ui->draaideur1CodeInvoer->text().toStdString());
-    ui->draaideur1CodeInvoer->clear();
+    kamerdeur1Slot->ontgrendel(ui->deur2CodeInvoer->text().toStdString());
+    ui->deur2CodeInvoer->clear();
     update();
 }
 
-void MainWindow::on_draaideur1Ontgrendel2Knop_clicked()
+void MainWindow::on_deur2Ontgrendel2Knop_clicked()
 {
     if (kamerdeur1Slot2) {
-        kamerdeur1Slot2->ontgrendel(ui->draaideur1CodeInvoer2->text().toStdString());
-        ui->draaideur1CodeInvoer2->clear();
+        kamerdeur1Slot2->ontgrendel(ui->deur2CodeInvoer2->text().toStdString());
+        ui->deur2CodeInvoer2->clear();
         update();
     }
 }
 
-void MainWindow::on_draaideur2Knop_clicked()
+void MainWindow::on_deur3Knop_clicked()
 {
     if (kamerdeur2->isOpen()) {
         kamerdeur2->sluiten();
@@ -194,10 +194,10 @@ void MainWindow::on_draaideur2Knop_clicked()
     update();  // belangrijk voor direct hertekenen
 }
 
-void MainWindow::on_draaideur2OntgrendelKnop_clicked()
+void MainWindow::on_deur3OntgrendelKnop_clicked()
 {
-    kamerdeur2Slot->ontgrendel(ui->draaideur2CodeInvoer->text().toStdString());
-    ui->draaideur2CodeInvoer->clear();
+    kamerdeur2Slot->ontgrendel(ui->deur3CodeInvoer->text().toStdString());
+    ui->deur3CodeInvoer->clear();
     update();
 }
 

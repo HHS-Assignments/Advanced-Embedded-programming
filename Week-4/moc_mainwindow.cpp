@@ -33,11 +33,11 @@ struct qt_meta_stringdata_MainWindow_t {
     char stringdata3[26];
     char stringdata4[36];
     char stringdata5[37];
-    char stringdata6[26];
-    char stringdata7[36];
-    char stringdata8[37];
-    char stringdata9[26];
-    char stringdata10[36];
+    char stringdata6[21];
+    char stringdata7[31];
+    char stringdata8[32];
+    char stringdata9[21];
+    char stringdata10[31];
     char stringdata11[29];
     char stringdata12[29];
     char stringdata13[27];
@@ -52,14 +52,14 @@ Q_CONSTINIT static const qt_meta_stringdata_MainWindow_t qt_meta_stringdata_Main
         QT_MOC_LITERAL(44, 25),  // "on_schuifdeurKnop_clicked"
         QT_MOC_LITERAL(70, 35),  // "on_schuifdeurOntgrendelKnop_c..."
         QT_MOC_LITERAL(106, 36),  // "on_schuifdeurOntgrendel2Knop_..."
-        QT_MOC_LITERAL(143, 25),  // "on_draaideur1Knop_clicked"
-        QT_MOC_LITERAL(169, 35),  // "on_draaideur1OntgrendelKnop_c..."
-        QT_MOC_LITERAL(205, 36),  // "on_draaideur1Ontgrendel2Knop_..."
-        QT_MOC_LITERAL(242, 25),  // "on_draaideur2Knop_clicked"
-        QT_MOC_LITERAL(268, 35),  // "on_draaideur2OntgrendelKnop_c..."
-        QT_MOC_LITERAL(304, 28),  // "on_herkenningVoegPos_clicked"
-        QT_MOC_LITERAL(333, 28),  // "on_herkenningVoegNeg_clicked"
-        QT_MOC_LITERAL(362, 26)   // "on_herkenningPrint_clicked"
+        QT_MOC_LITERAL(143, 20),  // "on_deur2Knop_clicked"
+        QT_MOC_LITERAL(164, 30),  // "on_deur2OntgrendelKnop_clicked"
+        QT_MOC_LITERAL(195, 31),  // "on_deur2Ontgrendel2Knop_clicked"
+        QT_MOC_LITERAL(227, 20),  // "on_deur3Knop_clicked"
+        QT_MOC_LITERAL(248, 30),  // "on_deur3OntgrendelKnop_clicked"
+        QT_MOC_LITERAL(279, 28),  // "on_herkenningVoegPos_clicked"
+        QT_MOC_LITERAL(308, 28),  // "on_herkenningVoegNeg_clicked"
+        QT_MOC_LITERAL(337, 26)   // "on_herkenningPrint_clicked"
     },
     "MainWindow",
     "on_schuifdeurSensorKnop_clicked",
@@ -67,11 +67,11 @@ Q_CONSTINIT static const qt_meta_stringdata_MainWindow_t qt_meta_stringdata_Main
     "on_schuifdeurKnop_clicked",
     "on_schuifdeurOntgrendelKnop_clicked",
     "on_schuifdeurOntgrendel2Knop_clicked",
-    "on_draaideur1Knop_clicked",
-    "on_draaideur1OntgrendelKnop_clicked",
-    "on_draaideur1Ontgrendel2Knop_clicked",
-    "on_draaideur2Knop_clicked",
-    "on_draaideur2OntgrendelKnop_clicked",
+    "on_deur2Knop_clicked",
+    "on_deur2OntgrendelKnop_clicked",
+    "on_deur2Ontgrendel2Knop_clicked",
+    "on_deur3Knop_clicked",
+    "on_deur3OntgrendelKnop_clicked",
     "on_herkenningVoegPos_clicked",
     "on_herkenningVoegNeg_clicked",
     "on_herkenningPrint_clicked"
@@ -140,15 +140,15 @@ Q_CONSTINIT const QMetaObject MainWindow::staticMetaObject = { {
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'on_schuifdeurOntgrendel2Knop_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        // method 'on_draaideur1Knop_clicked'
+        // method 'on_deur2Knop_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        // method 'on_draaideur1OntgrendelKnop_clicked'
+        // method 'on_deur2OntgrendelKnop_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        // method 'on_draaideur1Ontgrendel2Knop_clicked'
+        // method 'on_deur2Ontgrendel2Knop_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        // method 'on_draaideur2Knop_clicked'
+        // method 'on_deur3Knop_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        // method 'on_draaideur2OntgrendelKnop_clicked'
+        // method 'on_deur3OntgrendelKnop_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'on_herkenningVoegPos_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
@@ -170,11 +170,11 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 1: _t->on_schuifdeurKnop_clicked(); break;
         case 2: _t->on_schuifdeurOntgrendelKnop_clicked(); break;
         case 3: _t->on_schuifdeurOntgrendel2Knop_clicked(); break;
-        case 4: _t->on_draaideur1Knop_clicked(); break;
-        case 5: _t->on_draaideur1OntgrendelKnop_clicked(); break;
-        case 6: _t->on_draaideur1Ontgrendel2Knop_clicked(); break;
-        case 7: _t->on_draaideur2Knop_clicked(); break;
-        case 8: _t->on_draaideur2OntgrendelKnop_clicked(); break;
+        case 4: _t->on_deur2Knop_clicked(); break;
+        case 5: _t->on_deur2OntgrendelKnop_clicked(); break;
+        case 6: _t->on_deur2Ontgrendel2Knop_clicked(); break;
+        case 7: _t->on_deur3Knop_clicked(); break;
+        case 8: _t->on_deur3OntgrendelKnop_clicked(); break;
         case 9: _t->on_herkenningVoegPos_clicked(); break;
         case 10: _t->on_herkenningVoegNeg_clicked(); break;
         case 11: _t->on_herkenningPrint_clicked(); break;

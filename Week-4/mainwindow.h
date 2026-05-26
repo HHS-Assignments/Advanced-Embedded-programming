@@ -33,11 +33,11 @@ private slots:
     void on_schuifdeurKnop_clicked();
     void on_schuifdeurOntgrendelKnop_clicked();
     void on_schuifdeurOntgrendel2Knop_clicked();
-    void on_draaideur1Knop_clicked();
-    void on_draaideur1OntgrendelKnop_clicked();
-    void on_draaideur1Ontgrendel2Knop_clicked();
-    void on_draaideur2Knop_clicked();
-    void on_draaideur2OntgrendelKnop_clicked();
+    void on_deur2Knop_clicked();
+    void on_deur2OntgrendelKnop_clicked();
+    void on_deur2Ontgrendel2Knop_clicked();
+    void on_deur3Knop_clicked();
+    void on_deur3OntgrendelKnop_clicked();
     void on_herkenningVoegPos_clicked();
     void on_herkenningVoegNeg_clicked();
     void on_herkenningPrint_clicked();

@@ -173,7 +173,7 @@
      <string>Ontgrendel</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="draaideur1Knop">
+    <widget class="QPushButton" name="deur2Knop">
     <property name="geometry">
      <rect>
       <x>200</x>
@@ -183,10 +183,10 @@
      </rect>
     </property>
     <property name="text">
-     <string>D2</string>
+        <string>Deur 2</string>
     </property>
    </widget>
-   <widget class="QLineEdit" name="draaideur1CodeInvoer">
+    <widget class="QLineEdit" name="deur2CodeInvoer">
     <property name="geometry">
      <rect>
       <x>120</x>
@@ -202,7 +202,7 @@
      <string>1234</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="draaideur1OntgrendelKnop">
+    <widget class="QPushButton" name="deur2OntgrendelKnop">
     <property name="geometry">
      <rect>
       <x>170</x>
@@ -215,7 +215,7 @@
      <string>Ontgrendel</string>
     </property>
    </widget>
-   <widget class="QLineEdit" name="draaideur1CodeInvoer2">
+    <widget class="QLineEdit" name="deur2CodeInvoer2">
     <property name="geometry">
      <rect>
       <x>120</x>
@@ -231,7 +231,7 @@
      <string>rood</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="draaideur1Ontgrendel2Knop">
+    <widget class="QPushButton" name="deur2Ontgrendel2Knop">
     <property name="geometry">
      <rect>
       <x>170</x>
@@ -244,7 +244,7 @@
      <string>Ontgrendel</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="draaideur2Knop">
+    <widget class="QPushButton" name="deur3Knop">
     <property name="geometry">
      <rect>
       <x>180</x>
@@ -254,10 +254,10 @@
      </rect>
     </property>
     <property name="text">
-     <string>D3</string>
+        <string>Deur 3</string>
     </property>
    </widget>
-   <widget class="QLineEdit" name="draaideur2CodeInvoer">
+    <widget class="QLineEdit" name="deur3CodeInvoer">
     <property name="geometry">
      <rect>
       <x>80</x>
@@ -273,7 +273,7 @@
      <string>2468</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="draaideur2OntgrendelKnop">
+    <widget class="QPushButton" name="deur3OntgrendelKnop">
     <property name="geometry">
      <rect>
       <x>150</x>
@@ -292,18 +292,18 @@
    <zorder>herkenningVoegNeg</zorder>
    <zorder>herkenningPrint</zorder>
    <zorder>herkenningBrowser</zorder>
-   <zorder>draaideur2OntgrendelKnop</zorder>
-   <zorder>draaideur2CodeInvoer</zorder>
-   <zorder>draaideur1Knop</zorder>
-   <zorder>draaideur1OntgrendelKnop</zorder>
-   <zorder>draaideur2Knop</zorder>
-   <zorder>draaideur1CodeInvoer</zorder>
+    <zorder>deur3OntgrendelKnop</zorder>
+    <zorder>deur3CodeInvoer</zorder>
+    <zorder>deur2Knop</zorder>
+    <zorder>deur2OntgrendelKnop</zorder>
+    <zorder>deur3Knop</zorder>
+    <zorder>deur2CodeInvoer</zorder>
    <zorder>schuifdeurOntgrendelKnop</zorder>
    <zorder>schuifdeurSleutelInvoer</zorder>
-   <zorder>draaideur1Ontgrendel2Knop</zorder>
-   <zorder>draaideur1CodeInvoer2</zorder>
-   <zorder>schuifdeurOntgrendel2Knop</zorder>
-   <zorder>schuifdeurSleutelInvoer2</zorder>
+    <zorder>deur2Ontgrendel2Knop</zorder>
+    <zorder>deur2CodeInvoer2</zorder>
+    <zorder>schuifdeurOntgrendel2Knop</zorder>
+    <zorder>schuifdeurSleutelInvoer2</zorder>
    <zorder>schuifdeurKnop</zorder>
    <zorder>schuifdeurSensorKnop</zorder>
   </widget>
