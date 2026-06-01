@@ -33,6 +33,11 @@ private slots:
     void on_schuifdeurKnop_clicked();
     void on_schuifdeurOntgrendelKnop_clicked();
     void on_schuifdeurOntgrendel2Knop_clicked();
+    void on_createIdKaart_clicked();
+    void on_deleteIdKaart_clicked();
+    void on_grantIdKaartToSchuif_clicked();
+    void on_revokeIdKaartFromSchuif_clicked();
+    void on_ontgrendelSchuifMetId_clicked();
     void on_deur2Knop_clicked();
     void on_deur2OntgrendelKnop_clicked();
     void on_deur2Ontgrendel2Knop_clicked();
@@ -58,6 +63,20 @@ private:
     std::shared_ptr<Draaideur> kamerdeur1;
     std::shared_ptr<Draaideur> kamerdeur2;
     std::shared_ptr<class HerkenningsSlot> herkenningsSlot;
+
+    // KaartSlot / IdKaart support
+    std::shared_ptr<class KaartSlot> voordeurKaartSlot;
+    std::shared_ptr<class KaartSlot> kamerdeur1KaartSlot;
+
+    // simple UI widgets created at runtime for the assignment
+    class QLineEdit *idIdInvoer{nullptr};
+    class QLineEdit *idNaamInvoer{nullptr};
+    class QLineEdit *idAdresInvoer{nullptr};
+    class QPushButton *idMaakBtn{nullptr};
+    class QPushButton *idVerwijderBtn{nullptr};
+    class QPushButton *idGeefToegangBtn{nullptr};
+    class QPushButton *idHaalToegangBtn{nullptr};
+    class QPushButton *idOntgrendelBtn{nullptr};
 
 };
 

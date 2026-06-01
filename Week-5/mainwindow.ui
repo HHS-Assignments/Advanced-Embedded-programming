@@ -173,7 +173,7 @@
      <string>Ontgrendel</string>
     </property>
    </widget>
-    <widget class="QPushButton" name="deur2Knop">
+   <widget class="QPushButton" name="deur2Knop">
     <property name="geometry">
      <rect>
       <x>200</x>
@@ -183,10 +183,10 @@
      </rect>
     </property>
     <property name="text">
-        <string>Deur 2</string>
+     <string>Deur 2</string>
     </property>
    </widget>
-    <widget class="QLineEdit" name="deur2CodeInvoer">
+   <widget class="QLineEdit" name="deur2CodeInvoer">
     <property name="geometry">
      <rect>
       <x>120</x>
@@ -202,7 +202,7 @@
      <string>1234</string>
     </property>
    </widget>
-    <widget class="QPushButton" name="deur2OntgrendelKnop">
+   <widget class="QPushButton" name="deur2OntgrendelKnop">
     <property name="geometry">
      <rect>
       <x>170</x>
@@ -215,7 +215,7 @@
      <string>Ontgrendel</string>
     </property>
    </widget>
-    <widget class="QLineEdit" name="deur2CodeInvoer2">
+   <widget class="QLineEdit" name="deur2CodeInvoer2">
     <property name="geometry">
      <rect>
       <x>120</x>
@@ -231,7 +231,7 @@
      <string>rood</string>
     </property>
    </widget>
-    <widget class="QPushButton" name="deur2Ontgrendel2Knop">
+   <widget class="QPushButton" name="deur2Ontgrendel2Knop">
     <property name="geometry">
      <rect>
       <x>170</x>
@@ -244,7 +244,7 @@
      <string>Ontgrendel</string>
     </property>
    </widget>
-    <widget class="QPushButton" name="deur3Knop">
+   <widget class="QPushButton" name="deur3Knop">
     <property name="geometry">
      <rect>
       <x>180</x>
@@ -254,10 +254,10 @@
      </rect>
     </property>
     <property name="text">
-        <string>Deur 3</string>
+     <string>Deur 3</string>
     </property>
    </widget>
-    <widget class="QLineEdit" name="deur3CodeInvoer">
+   <widget class="QLineEdit" name="deur3CodeInvoer">
     <property name="geometry">
      <rect>
       <x>80</x>
@@ -273,7 +273,7 @@
      <string>2468</string>
     </property>
    </widget>
-    <widget class="QPushButton" name="deur3OntgrendelKnop">
+   <widget class="QPushButton" name="deur3OntgrendelKnop">
     <property name="geometry">
      <rect>
       <x>150</x>
@@ -286,26 +286,152 @@
      <string>Ontgrendel</string>
     </property>
    </widget>
+   <widget class="QLabel" name="idKaartLabel">
+    <property name="geometry">
+     <rect>
+      <x>520</x>
+      <y>540</y>
+      <width>200</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>IdKaart beheer</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="idIdInvoer">
+    <property name="geometry">
+     <rect>
+      <x>520</x>
+      <y>565</y>
+      <width>140</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="placeholderText">
+     <string>id</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="idNaamInvoer">
+    <property name="geometry">
+     <rect>
+      <x>670</x>
+      <y>565</y>
+      <width>140</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="placeholderText">
+     <string>naam</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="idAdresInvoer">
+    <property name="geometry">
+     <rect>
+      <x>820</x>
+      <y>565</y>
+      <width>140</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="placeholderText">
+     <string>adres</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="idMaakBtn">
+    <property name="geometry">
+     <rect>
+      <x>520</x>
+      <y>600</y>
+      <width>111</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Maak IdKaart</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="idVerwijderBtn">
+    <property name="geometry">
+     <rect>
+      <x>630</x>
+      <y>600</y>
+      <width>171</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Verwijder IdKaart</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="idGeefToegangBtn">
+    <property name="geometry">
+     <rect>
+      <x>800</x>
+      <y>600</y>
+      <width>171</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Geef toegang schuif</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="idHaalToegangBtn">
+    <property name="geometry">
+     <rect>
+      <x>520</x>
+      <y>630</y>
+      <width>211</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Haal toegang schuif</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="idOntgrendelBtn">
+    <property name="geometry">
+     <rect>
+      <x>730</x>
+      <y>630</y>
+      <width>231</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Ontgrendel schuif met id</string>
+    </property>
+   </widget>
    <zorder>herkenningLabel</zorder>
    <zorder>herkenningNaamInvoer</zorder>
    <zorder>herkenningVoegPos</zorder>
    <zorder>herkenningVoegNeg</zorder>
    <zorder>herkenningPrint</zorder>
    <zorder>herkenningBrowser</zorder>
-    <zorder>deur3OntgrendelKnop</zorder>
-    <zorder>deur3CodeInvoer</zorder>
-    <zorder>deur2Knop</zorder>
-    <zorder>deur2OntgrendelKnop</zorder>
-    <zorder>deur3Knop</zorder>
-    <zorder>deur2CodeInvoer</zorder>
+   <zorder>deur3OntgrendelKnop</zorder>
+   <zorder>deur3CodeInvoer</zorder>
+   <zorder>deur2Knop</zorder>
+   <zorder>deur2OntgrendelKnop</zorder>
+   <zorder>deur3Knop</zorder>
+   <zorder>deur2CodeInvoer</zorder>
    <zorder>schuifdeurOntgrendelKnop</zorder>
    <zorder>schuifdeurSleutelInvoer</zorder>
-    <zorder>deur2Ontgrendel2Knop</zorder>
-    <zorder>deur2CodeInvoer2</zorder>
-    <zorder>schuifdeurOntgrendel2Knop</zorder>
-    <zorder>schuifdeurSleutelInvoer2</zorder>
+   <zorder>deur2Ontgrendel2Knop</zorder>
+   <zorder>deur2CodeInvoer2</zorder>
+   <zorder>schuifdeurOntgrendel2Knop</zorder>
+   <zorder>schuifdeurSleutelInvoer2</zorder>
    <zorder>schuifdeurKnop</zorder>
    <zorder>schuifdeurSensorKnop</zorder>
+   <zorder>idKaartLabel</zorder>
+   <zorder>idIdInvoer</zorder>
+   <zorder>idNaamInvoer</zorder>
+   <zorder>idAdresInvoer</zorder>
+   <zorder>idMaakBtn</zorder>
+   <zorder>idVerwijderBtn</zorder>
+   <zorder>idGeefToegangBtn</zorder>
+   <zorder>idHaalToegangBtn</zorder>
+   <zorder>idOntgrendelBtn</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">

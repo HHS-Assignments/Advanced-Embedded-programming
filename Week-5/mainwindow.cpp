@@ -9,6 +9,8 @@
 #include "sleutelslot.h"
 #include "herkenningsslot.h"
 #include "drukbox.h"
+#include "kaartslot.h"
+#include "idkaart.h"
 
 #include <QPainter>
 #include <QLineEdit>
@@ -37,6 +39,22 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
     maakDeuren();
 
+    // Use the widgets that are now part of mainwindow.ui
+    idIdInvoer = ui->idIdInvoer;
+    idNaamInvoer = ui->idNaamInvoer;
+    idAdresInvoer = ui->idAdresInvoer;
+    idMaakBtn = ui->idMaakBtn;
+    idVerwijderBtn = ui->idVerwijderBtn;
+    idGeefToegangBtn = ui->idGeefToegangBtn;
+    idHaalToegangBtn = ui->idHaalToegangBtn;
+    idOntgrendelBtn = ui->idOntgrendelBtn;
+
+    connect(idMaakBtn, &QPushButton::clicked, this, &MainWindow::on_createIdKaart_clicked);
+    connect(idVerwijderBtn, &QPushButton::clicked, this, &MainWindow::on_deleteIdKaart_clicked);
+    connect(idGeefToegangBtn, &QPushButton::clicked, this, &MainWindow::on_grantIdKaartToSchuif_clicked);
+    connect(idHaalToegangBtn, &QPushButton::clicked, this, &MainWindow::on_revokeIdKaartFromSchuif_clicked);
+    connect(idOntgrendelBtn, &QPushButton::clicked, this, &MainWindow::on_ontgrendelSchuifMetId_clicked);
+
     // Herkennings widgets are created in the .ui file; auto-connected by name
 }
 
@@ -56,11 +74,19 @@ void MainWindow::maakDeuren()
     voordeur = std::make_shared<Schuifdeur>(489, 162, 80, sensor);
     voordeur->zetSlot(voordeurSlot);
     voordeur->voegSlotToe(voordeurSlot2);
+    // add a KaartSlot to the schuifdeur (assignment)
+    voordeurKaartSlot = std::make_shared<KaartSlot>("voordeur_kaart");
+    alleSloten.push_back(voordeurKaartSlot);
+    voordeur->voegSlotToe(voordeurKaartSlot);
     deuren.push_back(voordeur);
 
     kamerdeur1 = std::make_shared<Draaideur>(285, 286, 30, true);
     kamerdeur1->zetSlot(kamerdeur1Slot);
     kamerdeur1->voegSlotToe(kamerdeur1Slot2);
+    // add a KaartSlot to kamerdeur1 as well
+    kamerdeur1KaartSlot = std::make_shared<KaartSlot>("kamerdeur1_kaart");
+    alleSloten.push_back(kamerdeur1KaartSlot);
+    kamerdeur1->voegSlotToe(kamerdeur1KaartSlot);
     deuren.push_back(kamerdeur1);
 
     kamerdeur2 = std::make_shared<Draaideur>(234, 89, 40, false);
@@ -144,6 +170,65 @@ void MainWindow::on_schuifdeurOntgrendel2Knop_clicked()
         ui->schuifdeurSleutelInvoer2->clear();
         update();
     }
+}
+
+void MainWindow::on_createIdKaart_clicked()
+{
+    const std::string id = idIdInvoer->text().toStdString();
+    const std::string naam = idNaamInvoer->text().toStdString();
+    const std::string adres = idAdresInvoer->text().toStdString();
+    if (id.empty()) return;
+
+    auto kaart = std::make_shared<IdKaart>(id, naam, adres);
+    KaartSlot::voegIdKaartToe(kaart);
+
+    idIdInvoer->clear();
+    idNaamInvoer->clear();
+    idAdresInvoer->clear();
+}
+
+void MainWindow::on_deleteIdKaart_clicked()
+{
+    const std::string id = idIdInvoer->text().toStdString();
+    if (id.empty()) return;
+    KaartSlot::verwijderIdKaart(id);
+    idIdInvoer->clear();
+}
+
+void MainWindow::on_grantIdKaartToSchuif_clicked()
+{
+    const std::string id = idIdInvoer->text().toStdString();
+    if (id.empty() || !voordeurKaartSlot) return;
+    auto kaart = KaartSlot::getIdKaart(id);
+    if (kaart) {
+        kaart->geefToegang(voordeurKaartSlot.get());
+    }
+    idIdInvoer->clear();
+}
+
+void MainWindow::on_revokeIdKaartFromSchuif_clicked()
+{
+    const std::string id = idIdInvoer->text().toStdString();
+    if (id.empty() || !voordeurKaartSlot) return;
+    auto kaart = KaartSlot::getIdKaart(id);
+    if (kaart) {
+        kaart->verwijderToegang(voordeurKaartSlot.get());
+    }
+    idIdInvoer->clear();
+}
+
+void MainWindow::on_ontgrendelSchuifMetId_clicked()
+{
+    const std::string id = idIdInvoer->text().toStdString();
+    if (id.empty() || !voordeurKaartSlot) return;
+
+    if (voordeurKaartSlot->ontgrendel(id)) {
+        // if ontgrendelen succeeded, open the door
+        voordeur->openen();
+    }
+
+    idIdInvoer->clear();
+    update();
 }
 
 void MainWindow::on_deur2Knop_clicked()

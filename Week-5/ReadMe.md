@@ -4,13 +4,12 @@ Bij de firma L & B wordt besloten dat alleen een naam als identificatie niet mee
 
 In het klassediagram van figuur 1 zijn de onderlinge relaties weergegeven van Deur, Slot en IdKaart.
 
-![Figuur 1. Klasse diagram](image-7.png)
-Schema van een KaartSlot met een IdKaart
+![Klasse diagram](image-9.png)
+Figuur 1. Schema van een KaartSlot met een IdKaart
 
 Om met de idkaart een slot te ontgrendelen wordt een kaartslot aangeschaft. Dit slot leest de idkaart en bepaalt of de persoon het slot mag ontgrendelen. In figuur 2 wordt de sequence weergegeven hoe een kaartslot (ks1) ontgrendeld wordt met een IdKaart (idk1).
 
-![Figuur2. Sequencediagram](image-8.png)
-
+![Sequence](image-10.png)
 Figuur2. Sequencediagram van het ontgrendelen van een kaartslot
 
 De klasse KaartSlot: de static data-members / functions.
@@ -53,4 +52,3 @@ Test de beide klassen.
     Maak minimaal 2 IdKaart-objecten aan.
     Geef de gebruiker toegang tot de schuifdeur (gebruiker kan het KaartSlot-object bij de schuifdeur ontgrendelen).
     Ontneem de gebruiker de toegang (gebruiker kan het KaartSlot-object niet meer ontgrendelen)
-

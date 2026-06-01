@@ -28,3 +28,4 @@ private:
 };
 
 #endif // HERKENNINGSSLOT_H
+ko

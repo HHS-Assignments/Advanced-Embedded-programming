@@ -19,8 +19,9 @@ SOURCES += \
     schuifdeur.cpp \
     sensor.cpp \
     herkenningsslot.cpp \
-    drukbox.cpp
-
+    drukbox.cpp \
+    idkaart.cpp \
+    kaartslot.cpp
 HEADERS += \
     codeslot.h \
     deur.h \
@@ -34,7 +35,9 @@ HEADERS += \
     sensor.h \
     afdrukker.h \
     drukbox.h \
-    herkenningsslot.h
+    herkenningsslot.h \
+    idkaart.h \
+    kaartslot.h
 
 FORMS += \
     mainwindow.ui
