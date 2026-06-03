@@ -15,8 +15,9 @@ const std::string &IdKaart::getAdres() const { return m_adres; }
 void IdKaart::geefToegang(KaartSlot *slot)
 {
     if (!slot) return;
-    auto it = std::find(m_toegang.begin(), m_toegang.end(), slot);
-    if (it == m_toegang.end()) m_toegang.push_back(slot);
+    if (std::find(m_toegang.begin(), m_toegang.end(), slot) == m_toegang.end()) {
+        m_toegang.push_back(slot);
+    }
 }
 
 void IdKaart::verwijderToegang(KaartSlot *slot)

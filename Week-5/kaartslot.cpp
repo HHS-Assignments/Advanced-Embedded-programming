@@ -18,15 +18,13 @@ void KaartSlot::vergrendel()
 bool KaartSlot::ontgrendel(const std::string &waarde)
 {
     // waarde is expected to be the unique id string
-    auto it = idKaarten.find(waarde);
-    if (it == idKaarten.end()) return false;
-    auto idkaart = it->second;
-    if (!idkaart) return false;
-
-    if (!idkaart->heeftToegang(this)) return false;
-
-    vergrendeld = false;
-    return true;
+    if (auto it = idKaarten.find(waarde); it != idKaarten.end()) {
+        if (it->second && it->second->heeftToegang(this)) {
+            vergrendeld = false;
+            return true;
+        }
+    }
+    return false;
 }
 
 bool KaartSlot::isVergrendeld() const
